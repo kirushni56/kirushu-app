@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Kirushu - Habit Tracker</title>
+    <!-- Google Fonts for Premium Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- PWA settings -->
+    <meta name="theme-color" content="#121212" id="meta-theme-color">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header area -->
+        <header class="header">
+            <div>
+                <h1 class="logo">Kirushu</h1>
+                <p class="subtitle">Daily Habit Tracker</p>
+            </div>
+            <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+                <!-- Moon icon (default in dark mode, will toggle to sun) -->
+                <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+                </svg>
+            </button>
+        </header>
+
+        <main>
+            <!-- Daily Quote -->
+            <div class="quote-card">
+                <p id="daily-quote-text">"Loading motivation..."</p>
+            </div>
+
+            <!-- Date Display -->
+            <div class="date-display">
+                <span id="current-day">Today</span>
+                <span id="current-date">--</span>
+            </div>
+
+            <!-- Streak Display -->
+            <section class="streak-card">
+                <div class="streak-content">
+                    <div class="streak-icon">🔥</div>
+                    <div class="streak-text">
+                        <h2 id="streak-count">0 Days</h2>
+                        <p>Current Streak</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Habits List -->
+            <section class="habits-section">
+                <h3>Daily Goals</h3>
+                <div class="habits-list" id="habits-list">
+                    <!-- Javascript will inject habits here -->
+                </div>
+                
+                <!-- Add new habit form -->
+                <div class="add-habit-form">
+                    <input type="text" id="new-habit-input" placeholder="Enter new habit..." autocomplete="off">
+                    <button id="add-habit-btn">+</button>
+                </div>
+            </section>
+
+            <!-- Calendar View (History) -->
+            <section class="calendar-section">
+                <h3>History (Last 7 Days)</h3>
+                <div class="history-cards" id="history-cards">
+                    <!-- History cards injected by JS -->
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>Built for the win. Keep the streak alive.</p>
+        </footer>
+    </div>
+
+    <!-- Chatbot Window -->
+    <div class="chatbot-window" id="chatbot-window">
+        <div class="chatbot-header">
+            <h3>Kirushu AI Assistant</h3>
+            <button id="close-chat-btn" aria-label="Close Chat">×</button>
+        </div>
+        <div class="chatbot-messages" id="chatbot-messages">
+            <div class="chat-bot">Hello! I'm your AI habit coach. Log your daily activity or ask for advice!</div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chat-input" placeholder="Type your message..." autocomplete="off">
+            <button id="send-chat-btn">→</button>
+        </div>
+    </div>
+    
+    <!-- Floating Chat Button -->
+    <button class="chat-fab" id="chat-fab" aria-label="Open Chat">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
+        </svg>
+    </button>
+
+    <!-- Celebration element -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <script src="app.js"></script>
+</body>
+</html>
