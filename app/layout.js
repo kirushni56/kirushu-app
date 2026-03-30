@@ -6,6 +6,12 @@ const outfit = Outfit({ subsets: ['latin'], weight: ['300', '400', '500', '600',
 export const metadata = {
   title: 'Kirushu - Habit Tracker',
   description: 'Daily Habit Tracker with AI coach',
+  manifest: '/manifest.json',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'Kirushu',
+  },
 };
 
 export default function RootLayout({ children }) {

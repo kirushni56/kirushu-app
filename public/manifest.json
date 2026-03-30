@@ -1,0 +1,16 @@
+{
+  "name": "Kirushu - Habit Tracker",
+  "short_name": "Kirushu",
+  "description": "Daily Habit Tracker with AI coach",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f1115",
+  "theme_color": "#8b5cf6",
+  "icons": [
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
